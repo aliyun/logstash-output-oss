@@ -56,7 +56,7 @@ output {
     "encoding" => "gzip"                                    (optional, default = "none")
     "additional_oss_settings" => {
       "max_connections_to_oss" => 1024                      (optional, default = 1024)
-      "secure_connection_enabled" => false                  (optional, default = true)
+      "secure_connection_enabled" => false                  (optional, default = false)
     }
     codec => json {
       charset => "UTF-8"
@@ -87,6 +87,29 @@ This plugin supports the following configuration options
 ## Need Help?
 
 Need help? Try #logstash on freenode IRC or the https://discuss.elastic.co/c/logstash discussion forum.
+
+## Deployment
+This plugin has been submitted to [RubyGems.org](https://rubygems.org/gems/logstash-output-oss), and Logstash uses RubyGems.org as its repository for all plugin artifacts.
+So you can simply install this plugin in your Logstash home directory by:
+
+```bash
+./bin/logstash-plugin install logstash-output-oss
+```
+And you will get following message:
+
+```bash
+Validating logstash-output-oss
+Installing logstash-output-oss
+      com.aliyun.oss:aliyun-sdk-oss:3.4.0:compile
+Installation successful
+```
+
+You can also list plugins by:
+```bash
+./bin/logstash-plugin list --verbose logstash-output-oss
+
+logstash-output-oss (0.1.1)
+```
 
 ## Developing
 
