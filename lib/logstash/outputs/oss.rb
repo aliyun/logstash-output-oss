@@ -26,7 +26,7 @@ java_import "com.aliyun.oss.ClientBuilderConfiguration"
 #     "encoding" => "none"                                    (optional, default = "none")
 #     "additional_oss_settings" => {
 #       "max_connections_to_oss" => 1024                      (optional, default = 1024)
-#       "secure_connection_enabled" => false                  (optional, default = true)
+#       "secure_connection_enabled" => false                  (optional, default = false)
 #     }
 #   }
 # }
