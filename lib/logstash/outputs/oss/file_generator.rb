@@ -49,7 +49,7 @@ module LogStash
 
         private
         def create_file
-          uuid = UUID.new.generate
+          uuid = SecureRandom.uuid
           file_name = "ls.oss.#{uuid}.#{Time.now.strftime(STRFTIME)}.part-#{index}.#{extension}"
           object_key = ::File.join(prefix, file_name)
           local_path = ::File.join(temporary_directory, uuid)
@@ -62,6 +62,17 @@ module LogStash
                  end
 
           TemporaryFile.new(file, object_key, local_path)
+        end
+
+        unless SecureRandom.respond_to?(:uuid)
+          module SecureRandom
+            def self.uuid
+              ary = random_bytes(16).unpack("NnnnnN")
+              ary[2] = (ary[2] & 0x0fff) | 0x4000
+              ary[3] = (ary[3] & 0x3fff) | 0x8000
+              "%08x-%04x-%04x-%04x-%04x%08x" % ary
+            end
+          end
         end
       end
     end

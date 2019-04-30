@@ -4,7 +4,7 @@ module LogStash
   module Outputs
     class OSS
       class Version
-        VERSION = "0.1.1"
+        VERSION = "0.1.2"
         def self.version
           VERSION
         end
