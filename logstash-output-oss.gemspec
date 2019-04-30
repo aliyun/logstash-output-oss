@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
   s.name          = 'logstash-output-oss'
-  s.version       = '0.1.1'
+  s.version       = '0.1.2'
   s.licenses      = ['Apache-2.0']
   s.summary       = 'Sends Logstash events to the Aliyun Object Storage Service'
   s.description     = "This gem is a Logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/logstash-plugin install gem-name. This gem is not a stand-alone program"
-  s.authors       = ['jinhu.wu']
+  s.authors       = ['Jinhu Wu']
   s.email         = 'jinhu.wu.nju@gmail.com'
   s.require_paths = ['lib']
   s.homepage        = "http://www.elastic.co/guide/en/logstash/current/index.html"
